@@ -12,16 +12,5 @@ Rails.application.routes.draw do
   # heartbeat page
   get 'heartbeat', to: 'heartbeat#show'
 
-  resource :rfa, controller: :rfa, only: [] do
-    member do
-      get :show
-      get :index
-      get :residence_ownership_types
-      get :languages
-      get :name_types
-      get :phone_number_types
-
-      post :residence
-    end
-  end
+  get 'rfa', to: 'rfa#show'
 end

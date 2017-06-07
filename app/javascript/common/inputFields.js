@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const InputComponent = ({gridClassName, labelClassName, id, label, onChange, value, placeholder, type}) => (
   <div className={gridClassName}>
     <div>
