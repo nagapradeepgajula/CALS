@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'search#index'
   resources :facilities,  only:[:index, :show] do
     collection { post :search }
@@ -11,5 +12,7 @@ Rails.application.routes.draw do
 
   # heartbeat page
   get 'heartbeat', to: 'heartbeat#show'
+
+  get 'rfa', to: 'rfa#show'
 
 end
