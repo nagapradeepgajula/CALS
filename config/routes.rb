@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   resources :search, only: [:index] do
   end
 
+
   # heartbeat page
   get 'heartbeat', to: 'heartbeat#show'
+
+  get 'rfa', to: 'rfa#show'
 
 end
