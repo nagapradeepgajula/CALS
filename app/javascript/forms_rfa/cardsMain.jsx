@@ -40,15 +40,15 @@ export default class Cards extends React.Component {
     return (
       <div className="cards-inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <form onSubmit={this.submitForm.bind(this)}>
-          <InputComponent gridClassName='col-md-4' id='firstname' 
+          <InputComponent gridClassName='col-md-4' id='firstname'
                           label='First Name:' placeholder='Enter First Name'
                           value={formData.first_name || ''}
                           onChange={(event) => this.setField(['first_name'], event.target.value)} />
-          <InputComponent gridClassName='col-md-4' id='middleName' 
-                          label='Middle Name:' placeholder='Enter Middle Name' 
+          <InputComponent gridClassName='col-md-4' id='middleName'
+                          label='Middle Name:' placeholder='Enter Middle Name'
                           value={formData.middle_name || ''}
-                          onChange={(event) => this.setField(['middle_name'], event.target.value)}/>                
-          <InputComponent gridClassName='col-md-4' id='lastName' 
+                          onChange={(event) => this.setField(['middle_name'], event.target.value)}/>
+          <InputComponent gridClassName='col-md-4' id='lastName'
                           label='Last Name:' placeholder='Enter Last Name'
                           value={formData.last_name|| ''}
                           onChange={(event) => this.setField(['last_name'], event.target.value)}/>
@@ -58,7 +58,7 @@ export default class Cards extends React.Component {
                          label={"This was for select Label"}/>
           <div className='card_submit col-md-12'>
               <button id='save_progress' type='submit' className='search-icon'>Save Progress</button>
-          </div>              
+          </div>
         </form>
       </div>
     )
