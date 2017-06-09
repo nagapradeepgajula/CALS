@@ -1,0 +1,18 @@
+.cards-section {
+  margin: 0px auto;
+  position: relative;
+  padding: 0px 15px;
+  height: auto;
+  text-align: center;
+}
+.cards-inner label {
+  display: block;
+  text-align: left;
+}
+.cards-inner input {
+  display: block;
+}
+.cards-inner .reusable-select {
+  margin: 5px 0;
+  float: left;
+}
