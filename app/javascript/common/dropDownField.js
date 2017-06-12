@@ -1,9 +1,9 @@
 import React from 'react';
 
-const DropDownField = ({gridClassName, selectClassName, optionList, label}) => (
+const DropDownField = ({gridClassName, selectClassName, optionList,onChange, label}) => (
   <div className={gridClassName}>
     <label>{label}</label>
-    <select defaultValue="" className={selectClassName}>
+    <select defaultValue="" onChange={onChange} className={selectClassName}>
       {
         (Object.keys(optionList).sort()).map((item) => {
           return (
