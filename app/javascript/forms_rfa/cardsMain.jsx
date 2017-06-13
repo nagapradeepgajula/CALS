@@ -14,7 +14,7 @@ const nameTypes = {
 export default class CardsMain extends React.Component {
   render () {
     return (
-      <div className="cards-inner">
+      <div className="cards-inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <InputComponent gridClassName='col-md-4' id='firstname' label='First Name:' placeholder='Enter First Name'/>
         <InputComponent gridClassName='col-md-4' id='lastName' label='Last Name:' placeholder='Enter Last Name'/>
         <InputComponent gridClassName='col-md-4' id='middleName' label='Middle Name:' placeholder='Enter Middle Name'/>
