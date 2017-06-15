@@ -11,7 +11,7 @@ const nameTypes = {
   '05': 'other',
   '05': '[List to be identified]'
 }
-export default class Cards extends React.Component {
+export default class CardsMain extends React.Component {
   constructor() {
     super(...arguments)
     this.state = {
@@ -33,7 +33,33 @@ export default class Cards extends React.Component {
     this.setState({formData: formData})
   }
   submitForm() {
-    console.log("Hello")
+    fetch('/facilities/forms', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'X-CSRF-Token': this.getCsrfToken('csrf-token'),
+        'X-CSRF-param': this.getCsrfToken('csrf-param')
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({
+        params
+      })
+    })
+    .then(
+      response => response.json())
+    .then((response) => {
+      return this.setState({
+        searchData: response.facilities
+      })
+    })
+    .catch(error => {
+      console.log(error)
+      return this.setState({
+        searchData: [],
+        fromResponse: true
+      })
+    })
   }
   render () {
     const {formData} = this.state
