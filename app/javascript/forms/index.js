@@ -3,7 +3,7 @@ import Cards from './cardsMain'
 import PhoneComponent from './phoneNumberMain'
 import './stylesheets/cards-main.scss'
 
-export default class FormsRFA extends React.Component {
+export default class Forms extends React.Component {
   render () {
     return (
       <div className="main_page">
