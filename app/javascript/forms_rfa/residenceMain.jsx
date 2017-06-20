@@ -6,6 +6,29 @@ import {DropDownField} from '../common/dropDownField';
 const stateNames = {
     '01': 'California',
 }
+
+const rentOrlease = {
+    '01': 'yes',
+    '02': 'no',
+}
+const weapons = {
+    '01': 'yes',
+    '02': 'no',
+}
+
+const bodyOfwater = {
+    '01': 'yes',
+    '02': 'no',
+}
+const personNotListed = {
+    '01': 'yes',
+    '02': 'no',
+}
+
+const languagesSpoken = {
+    '01': 'English',
+    '02': 'Spanish',
+}
 export default class ResidenceMain extends React.Component {
 
 
@@ -27,8 +50,36 @@ export default class ResidenceMain extends React.Component {
                                    selectClassName={'reusable-select'}
                                    optionList={stateNames}
                                    label={"State"}/>
-                    <div className='card_submit col-md-12'>
-                        <button id='save_progress' type='submit' className='search-icon'>Save Progress</button>
+                    <InputComponent gridClassName='col-md-4' id='lastName'
+                                    label='Mailing address the same as Physical Address?' placeholder='' />
+
+                    <div className="cards-inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div> <h4 className="text-left"> About This Residence </h4> </div>
+                        <form>
+                    <DropDownField gridClassName='col-md-12'
+                                   selectClassName={'reusable-select'}
+                                   optionList={rentOrlease}
+                                   label={"Do you own, rent or lease the residence?"}/>
+                            <br></br>
+                    <DropDownField gridClassName='col-md-12'
+                                   selectClassName={'reusable-select'}
+                                   optionList={weapons}
+                                   label={"Weapons in home?"}/>
+                    <DropDownField gridClassName='col-md-12'
+                                   selectClassName={'reusable-select'}
+                                   optionList={bodyOfwater}
+                                   label={"Body of Water?"}/>
+                    <DropDownField gridClassName='col-md-12'
+                                   selectClassName={'reusable-select'}
+                                   optionList={personNotListed}
+                                   label={"Does any person not listed in this document use the residence as their mailing address?"}/>
+                    <InputComponent gridClassName='col-md-12' id='directions'
+                                    label='Please provide directions, including major cross-street information, to your residence.' placeholder='' />
+                    <DropDownField gridClassName='col-md-12'
+                                   selectClassName={'reusable-select'}
+                                   optionList={languagesSpoken}
+                                   label={"Language(s) spoken in the home"}/>
+                        </form>
                     </div>
                 </form>
             </div>
