@@ -2,7 +2,7 @@ import React from 'react';
 import Cards from './cardsMain'
 
 import './stylesheets/cards-main.scss'
-
+import Residence from './residenceMain'
 export default class Forms extends React.Component {
   constructor (props) {
     super(props);
