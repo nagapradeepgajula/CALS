@@ -1,5 +1,7 @@
+require 'hypernova'
+
 class RfaController < CalsBaseController
-  include Response
+  around_action :hypernova_render_support
 
   def index
   end
