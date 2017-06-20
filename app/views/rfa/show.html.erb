@@ -1,6 +1,5 @@
-<div id="search_page">
-  <%=render_react_component('rfa') %>
-  <%= javascript_pack_tag 'rfa' %>
-  <%= stylesheet_pack_tag 'rfa' %>
+<div id="forms_page">
+  <%= react_component('forms', {prerender: true}) %>
+  <%= javascript_pack_tag 'forms' %>
+  <%= stylesheet_pack_tag 'forms' %>
 </div>
-`
