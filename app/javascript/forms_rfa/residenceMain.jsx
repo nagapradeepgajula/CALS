@@ -12,21 +12,21 @@ export default class ResidenceMain extends React.Component {
     render () {
         return (
             <div className="cards-inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div>
+                    <h3 className="text-left">Applicant (S) - Residence</h3></div>
                 <form>
-                    <InputComponent gridClassName='col-md-4' id='firstname'
-                                    label='First Name:' placeholder='Enter First Name'
+                    <InputComponent gridClassName='col-md-12' id='physicalAddress'
+                                    label='Physical Address:' placeholder='Enter Physical Address'
 
                     />
-                    <InputComponent gridClassName='col-md-4' id='middleName'
-                                    label='Middle Name:' placeholder='Enter Middle Name'
-                                    onChange={(event) => this.setField(['middle_name'], event.target.value)}/>
+                    <InputComponent gridClassName='col-md-4' id='zip'
+                                    label='Zip Code:' placeholder='Ex:12345' />
                     <InputComponent gridClassName='col-md-4' id='lastName'
-                                    label='Last Name:' placeholder='Enter Last Name'
-                                    onChange={(event) => this.setField(['last_name'], event.target.value)}/>
+                                    label='City:' placeholder='Enter City' />
                     <DropDownField gridClassName='col-md-4'
                                    selectClassName={'reusable-select'}
                                    optionList={stateNames}
-                                   label={"This was for select Label"}/>
+                                   label={"State"}/>
                     <div className='card_submit col-md-12'>
                         <button id='save_progress' type='submit' className='search-icon'>Save Progress</button>
                     </div>
