@@ -1,5 +1,6 @@
 import React from 'react';
 import Cards from './cardsMain'
+import PhoneComponent from './phoneNumberMain'
 import './stylesheets/cards-main.scss'
 
 export default class FormsRFA extends React.Component {
@@ -14,6 +15,9 @@ export default class FormsRFA extends React.Component {
         </div>
         <div className="cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <Cards />
+        </div>
+        <div className="phone-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <PhoneComponent />
         </div>
       </div>
     )
