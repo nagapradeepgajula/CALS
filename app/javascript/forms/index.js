@@ -40,6 +40,9 @@ export default class Forms extends React.Component {
             </div>
           </div>
         </div>
+          <div className="residence-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <Residence />
+          </div>
       </div>
     )
   }
