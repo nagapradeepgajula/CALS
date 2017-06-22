@@ -12,7 +12,6 @@ const nameTypes = {
   '05': '[List to be identified]'
 }
 export default class Cards extends React.Component {
-
   constructor() {
     super(...arguments)
     this.state = {
@@ -34,6 +33,7 @@ export default class Cards extends React.Component {
     this.setState({formData: formData})
   }
   submitForm() {
+    console.log("Hello")
   }
   render () {
     const {formData} = this.state
