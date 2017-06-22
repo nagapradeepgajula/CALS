@@ -6,6 +6,7 @@ const InputComponent = ({gridClassName, labelClassName, id, label, onChange, val
     <div>
       <label className={labelClassName} htmlFor={id}>{label}</label>
       <input  id={id} type={type} placeholder={placeholder} value={value} onChange={onChange}/>
+
     </div>
   </div>
 )
