@@ -5,9 +5,9 @@ const DropDownField = ({gridClassName, selectClassName, optionList,onChange, lab
     <label>{label}</label>
     <select defaultValue="" onChange={onChange} className={selectClassName}>
       {
-        (Object.keys(optionList).sort()).map((item) => {
+        optionList.map((item) => {
           return (
-            <option key={Number(item)} value={item}>{optionList[item]}</option>
+            <option key={Number(item.id)} value={item.id}>{item.value}</option>
           )
         })
       }
