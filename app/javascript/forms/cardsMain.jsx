@@ -1,16 +1,8 @@
 import React from 'react';
-import {InputComponent} from '../common/inputFields';
-import {DropDownField} from '../common/dropDownField';
+import NameCard from './name_card'
+import PhoneComponent from './phoneNumber_card'
 
 
-const nameTypes = {
-  '01': 'Alias',
-  '02': 'Legal Name',
-  '03': 'Maiden Name',
-  '04': 'Preferred Name',
-  '05': 'other',
-  '05': '[List to be identified]'
-}
 export default class Cards extends React.Component {
   constructor() {
     super(...arguments)
