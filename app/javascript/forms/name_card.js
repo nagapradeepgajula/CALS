@@ -38,20 +38,22 @@ export default class NameCard extends React.Component {
       ]
     }
     return (
-      <div className="card-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <form>
-          <InputComponent gridClassName='col-md-4' id='firstname' value={this.props.first_name}
-                          label='First Name:' placeholder='Enter First Name'
-                          type={'text'} onChange={(event) => this.onChange(event.target.value)} />
-          <InputComponent gridClassName='col-md-4' id='middleName' value={this.props.middle_name}
-                          label='Middle Name:' placeholder='Enter Middle Name' />
-          <InputComponent gridClassName='col-md-4' id='lastName' value={this.props.last_name}
-                          label='Last Name:' placeholder='Enter Last Name' />
-          <DropDownField gridClassName='col-md-4'
-                         selectClassName={'reusable-select'}
-                         optionList={nameTypes.items}
-                         label={"This was for select Label"}/>
-        </form>
+      <div className="card-body">
+       <div className="row">
+         <form>
+           <InputComponent gridClassName='col-md-4' id='firstname' value={this.props.first_name}
+                           label='First Name:' placeholder='Enter First Name'
+                           type={'text'} onChange={(event) => this.onChange(event.target.value)} />
+           <InputComponent gridClassName='col-md-4' id='middleName' value={this.props.middle_name}
+                           label='Middle Name:' placeholder='Enter Middle Name' />
+           <InputComponent gridClassName='col-md-4' id='lastName' value={this.props.last_name}
+                           label='Last Name:' placeholder='Enter Last Name' />
+           <DropDownField gridClassName='col-md-4'
+                          selectClassName={'reusable-select'}
+                          optionList={nameTypes.items}
+                          label={"This was for select Label"}/>
+         </form>
+       </div>
       </div>
     )
   }

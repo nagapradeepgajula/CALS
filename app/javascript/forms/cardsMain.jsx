@@ -30,11 +30,17 @@ export default class Cards extends React.Component {
   render () {
     const {formData} = this.state
     return (
-      <div className="cards col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div className="cards-inner name-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div className="cards">
+        <div className="card edit name-section double-gap-top">
+          <div className="card-header">
+            <span>Name</span>
+          </div>
           <NameCard />
         </div>
-        <div className="cards-inner phone-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div className="card edit phone-section double-gap-top">
+          <div className="card-header">
+            <span>Phone Number</span>
+          </div>
           <PhoneComponent />
         </div>
       </div>

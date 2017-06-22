@@ -22,7 +22,7 @@ export class PhoneNumberField extends React.Component {
       ]
     }
     return (
-      <div>
+      <div className="row">
         <form>
           <InputComponent gridClassName='col-md-4' id='firstname' 
                           label='First Name:' placeholder='Enter Phone Number' />
