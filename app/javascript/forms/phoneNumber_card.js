@@ -6,7 +6,7 @@ import {DropDownField} from '../common/dropDownField';
 export default class PhoneComponent extends React.Component {
 	render () {
 		return (
-			<div className="col-md-12">
+			<div className="card-body">
         <PhoneNumberField  />
       </div>
 		)
