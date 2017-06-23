@@ -1,5 +1,5 @@
-class Rfa::ApplicantHouseholdAddress < Address
-  include Concerns::Rfa::ApplicantHouseholdAddressApiProtocolProvider
+class RFA::ApplicantHouseholdAddress < Address
+  include Concerns::RFA::ApplicantHouseholdAddressApiProtocolProvider
   attr_accessor :property_type, :own_rent_lease,
   :weapons, :body_of_water, :directions
 

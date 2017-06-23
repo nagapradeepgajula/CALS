@@ -1,15 +1,15 @@
-class Helpers::Rfa::RfaApplication < Helpers::ModelHelperBase
+class Helpers::RFA::RfaApplication < Helpers::ModelHelperBase
 
   def model_class
-    Rfa::RfaApplication
+    RFA::RfaApplication
   end
 
   def name_types
-    Rfa::RfaApplication.name_types(auth_header)
+    RFA::RfaApplication.name_types(auth_header)
   end
 
   def phone_types
-    Rfa::RfaApplication.phone_types(auth_header)
+    RFA::RfaApplication.phone_types(auth_header)
   end
 
 end

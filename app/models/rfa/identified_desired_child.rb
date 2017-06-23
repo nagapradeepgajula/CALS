@@ -1,4 +1,4 @@
-class Rfa::IdentifiedDesiredChild < CalsBase
+class RFA::IdentifiedDesiredChild < CalsBase
   # FORM 01A
   attr_accessor :currently_in_home
   # TODO: add in correct fields from form C

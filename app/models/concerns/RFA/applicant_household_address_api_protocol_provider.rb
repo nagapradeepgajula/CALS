@@ -1,4 +1,4 @@
-module Concerns::Rfa::ApplicantHouseholdAddressApiProtocolProvider
+module Concerns::RFA::ApplicantHouseholdAddressApiProtocolProvider
   extend ActiveSupport::Concern
   include Concerns::BaseApiProtocolProvider
 
