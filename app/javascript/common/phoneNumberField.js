@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import {InputComponent} from './inputFields'
 import {DropDownField} from './dropDownField'
 
@@ -24,7 +24,7 @@ export class PhoneNumberField extends React.Component {
     return (
       <div className="row">
         <form>
-          <InputComponent gridClassName='col-md-4' id='firstname' 
+          <InputComponent gridClassName='col-md-4' id='firstname'
                           label='Phone Number' placeholder='Enter Phone Number' />
           <DropDownField gridClassName='col-md-4'
                          selectClassName={'reusable-select'}
