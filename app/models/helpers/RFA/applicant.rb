@@ -16,4 +16,8 @@ class Helpers::RFA::Applicant < Helpers::ModelHelperBase
     RFA::Applicant.education_levels(auth_header)
   end
 
+  def language_types
+    RFA::Applicant.language_types(auth_header)
+  end
+
 end

@@ -17,6 +17,10 @@ module Concerns::RFA::ApplicantApiProtocolProvider
      response = FaradayCals.get("/dictionaries/genders?token=null", auth_header)
        JSON.parse(response.body)
    end
+
+   def language_types(auth_header)
+     response = FaradayCals.get("/dictionaries/languages?token=null", auth_header)
+       JSON.parse(response.body)
 end
 
 end
