@@ -1,5 +1,5 @@
-class RFA::RfaApplication < CalsBase
-  include Concerns::RFA::RfaApplicationApiProtocolProvider
+class Rfa::RfaApplication < CalsBase
+  include Concerns::Rfa::RfaApplicationApiProtocolProvider
   attr_accessor :application_type, :county, :progress_state
 
   # has_many :applicants

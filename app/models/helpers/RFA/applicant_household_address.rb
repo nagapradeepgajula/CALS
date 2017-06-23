@@ -1,11 +1,11 @@
-class Helpers::RFA::ApplicantHouseholdAddress < Helpers::ModelHelperBase
+class Helpers::Rfa::ApplicantHouseholdAddress < Helpers::ModelHelperBase
 
   def model_class
-    RFA::ApplicantHouseholdAddress
+    Rfa::ApplicantHouseholdAddress
   end
 
   def residence_types
-    RFA::ApplicantHouseholdAddress.residence_types(auth_header)
+    Rfa::ApplicantHouseholdAddress.residence_types(auth_header)
   end
 
 end
