@@ -1,12 +1,9 @@
-# require 'hypernova'
-
 class FacilitiesController < CalsBaseController
 
   include Response
 
   def index
    @facilities = facility_helper.all
-
   end
 
   def show
