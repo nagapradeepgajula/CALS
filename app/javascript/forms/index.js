@@ -1,5 +1,6 @@
 import React from 'react';
 import Cards from './cardsMain'
+import ResidenceCards from './residenceCardsMain'
 
 import './stylesheets/cards-main.scss'
 
@@ -32,6 +33,10 @@ export default class Forms extends React.Component {
             <div className="cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <h3>I. Application 1 - <span>Information</span></h3>
               <Cards />
+            </div>
+            <div className="cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <h3>II. Applicant (S) - <span>Residence</span></h3>
+              <ResidenceCards />
             </div>
           </div>
           <div className="right-content col-xs-4 col-sm-4 col-md-4 col-lg-4">
