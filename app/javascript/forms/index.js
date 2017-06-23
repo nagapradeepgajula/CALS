@@ -1,11 +1,15 @@
 import React from 'react';
 import Cards from './cardsMain'
-
 import './stylesheets/cards-main.scss'
 
 export default class Forms extends React.Component {
+  getInitialState (){
+    this.props.nameTypeValues = this.props.nameTypes
+  }
   constructor (props) {
     super(props);
+    debugger;
+    this.nameTypeValues = this.props.nameTypes
   }
   submitForm () {
     var x = this.props

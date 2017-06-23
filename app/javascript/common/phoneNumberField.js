@@ -25,11 +25,11 @@ export class PhoneNumberField extends React.Component {
       <div className="row">
         <form>
           <InputComponent gridClassName='col-md-4' id='firstname' 
-                          label='First Name:' placeholder='Enter Phone Number' />
+                          label='Phone Number' placeholder='Enter Phone Number' />
           <DropDownField gridClassName='col-md-4'
                          selectClassName={'reusable-select'}
                          optionList={phoneType.items}
-                         label={"This was for select Label"} />
+                         label={"Phone Type"} />
           <InputComponent gridClassName='col-md-4' id='firstname' type={'checkbox'}
                           label='Preferred Contact Number' placeholder='Enter Phone Number' />
           {/*<div className="col-md-12">*/}

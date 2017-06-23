@@ -6,6 +6,9 @@ class RfaController < CalsBaseController
   def residence
   end
 
+  def show
+    @name_types = { :name => 'maiden', :other => 'legal' }
+  end
   # def residence_ownership_types
   #   json_response(get_dictionaries 'residence-ownership-types')
   # end

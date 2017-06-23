@@ -8,6 +8,13 @@ GIT
       faraday (~> 0.9.2)
 
 GIT
+  remote: https://github.com/ca-cwds/woodduck-rails.git
+  revision: 6b4801299dc3d330022456ac5f8c88a1b2085f49
+  branch: development
+  specs:
+    woodduck-rails (0.1.0)
+
+GIT
   remote: https://github.com/rails/sass-rails.git
   revision: dd04a6a6d19cbd7cfd2f9d304a445444e0b88a19
   specs:
@@ -19,8 +26,8 @@ GIT
 
 GIT
   remote: https://github.com/rails/webpacker.git
-  revision: e4b3ec4a34072fb3d06b2380d23fd9dd37b22d9d
-  ref: e4b3ec4
+  revision: 48ef0892eae1ef8afc5ffe3481329991dd47d32e
+  ref: 48ef089
   specs:
     webpacker (2.0)
       activesupport (>= 4.2)
@@ -320,7 +327,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   poltergeist
   puma (~> 3.7)
-  rails (~> 5.1.0.beta1)
+  rails (~> 5.1.1)
   rails-controller-testing
   react-rails (~> 2.2)
   redis-rails (~> 5.0)
@@ -339,6 +346,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webmock
   webpacker!
+  woodduck-rails!
 
 BUNDLED WITH
    1.14.6
