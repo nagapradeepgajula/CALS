@@ -1,6 +1,8 @@
 import React from 'react';
 import NameCard from './name_card'
 import PhoneComponent from './phoneNumber_card'
+import AboutApplicant from './aboutApplicant_card'
+import Employment from './employment_card'
 
 
 export default class Cards extends React.Component {
@@ -42,6 +44,18 @@ export default class Cards extends React.Component {
             <span>Phone Number</span>
           </div>
           <PhoneComponent />
+        </div>
+        <div className="card edit phone-section double-gap-top">
+          <div className="card-header">
+            <span>More about Applicant</span>
+          </div>
+          <AboutApplicant />
+        </div>
+        <div className="card edit phone-section double-gap-top">
+          <div className="card-header">
+            <span>Employment</span>
+          </div>
+          <Employment />
         </div>
       </div>
     )
