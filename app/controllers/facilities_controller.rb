@@ -3,7 +3,9 @@ class FacilitiesController < CalsBaseController
   include Response
 
   def index
-   @facilities = facility_helper.all
+    # @race_types = Helpers::Dictionary.new(auth_header: 'abc').all(RaceType)
+
+    @facilities = facility_helper.all
   end
 
   def show
