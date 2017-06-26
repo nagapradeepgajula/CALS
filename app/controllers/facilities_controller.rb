@@ -3,8 +3,8 @@ class FacilitiesController < CalsBaseController
   include Response
 
   def index
-    @race_types = Helpers::Dictionaries::RaceTypeHelper.new(auth_header: 'abc').all
-    byebug
+  #  @race_types = Helpers::Dictionaries::RaceTypeHelper.new(auth_header: 'abc').all
+
     @facilities = facility_helper.all
   end
 
