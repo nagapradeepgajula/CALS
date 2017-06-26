@@ -1,9 +1,12 @@
-import React from 'React';
+import React from 'react';
 import {InputComponent} from './inputFields'
 import {DropDownField} from './dropDownField'
 
 
 export class PhoneNumberField extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render () {
     const phoneType = {
       "items": [
@@ -22,14 +25,18 @@ export class PhoneNumberField extends React.Component {
       ]
     }
     return (
-      <div className="row">
+      <div className="row list-item">
+        <span onClick={() => this.props.removeCard(this.props.id)} className="pull-right glyphicon glyphicon-remove"></span>
+        {/*<a onClick={this.removeCard}  className="list-item__a" aria-label="Delete phone number" href="#">*/}
+          {/*<i className="fa fa-times"></i>*/}
+        {/*</a>*/}
         <form>
-          <InputComponent gridClassName='col-md-4' id='firstname' 
-                          label='First Name:' placeholder='Enter Phone Number' />
+          <InputComponent gridClassName='col-md-4' id='firstname'
+                          label='Phone Number' placeholder='Enter Phone Number' />
           <DropDownField gridClassName='col-md-4'
                          selectClassName={'reusable-select'}
                          optionList={phoneType.items}
-                         label={"This was for select Label"} />
+                         label={"Phone Type"} />
           <InputComponent gridClassName='col-md-4' id='firstname' type={'checkbox'}
                           label='Preferred Contact Number' placeholder='Enter Phone Number' />
           {/*<div className="col-md-12">*/}
