@@ -1,5 +1,6 @@
 import React from 'react';
-import AddressMain from './address_card'
+import AddressCard from './address_card'
+import AboutThisResidenceCard from './about_this_residence_card'
 
 export default class ResidenceCards extends React.Component {
     constructor() {
@@ -30,10 +31,16 @@ export default class ResidenceCards extends React.Component {
         return (
             <div className="residence_cards">
                 <div className="card edit phone-section double-gap-top">
-                    <div className="residence-header">
+                    <div className="card-header">
                         <span>Address</span>
                     </div>
-                    <AddressMain />
+                    <AddressCard />
+                </div>
+                <div className="card edit phone-section double-gap-top">
+                    <div className="card-header">
+                        <span>About This Residence</span>
+                    </div>
+                    <AboutThisResidenceCard />
                 </div>
             </div>
         )

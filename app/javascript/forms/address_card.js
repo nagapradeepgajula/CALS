@@ -4,7 +4,7 @@ import {DropDownField} from '../common/dropDownField';
 
 
 
-export default class ResidenceMain extends React.Component {
+export default class AddressCard extends React.Component {
 
     constructor(props) {
         super(props);
@@ -28,11 +28,22 @@ export default class ResidenceMain extends React.Component {
                 }
             ]
         }
+
+        const yesNo = {
+            "items": [
+                {
+                    "id": 1,
+                    "value": "Yes"
+                },
+                {
+                    "id": 2,
+                    "value": "No"
+                }
+            ]
+        }
         return (
-            <div className="cards-inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div>
-                    <h3 className="text-left">Applicant (S) - Residence</h3></div>
-                <div> <h4 className="text-left">Address</h4> </div>
+            <div className="card-body">
+                <div className="row">
                 <form>
                     <InputComponent gridClassName='col-md-12' id='physicalAddress'
                                     label='Physical Address:' placeholder='Enter Physical Address'
@@ -46,39 +57,14 @@ export default class ResidenceMain extends React.Component {
                                    selectClassName={'reusable-select'}
                                    optionList={stateNames.items}
                                    label={"This was for select Label"}/>
-                    <InputComponent gridClassName='col-md-4' id='lastName'
-                                    label='Mailing address the same as Physical Address?' placeholder='' />
-
-                    <div className="cards-inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div> <h4 className="text-left"> About This Residence </h4> </div>
-                        <form>
-                            <DropDownField gridClassName='col-md-12'
-                                           selectClassName={'reusable-select'}
-                                           optionList={stateNames.items}
-                                           label={"Do you own, rent or lease the residence?"}/>
-                            <br></br>
-                            <DropDownField gridClassName='col-md-12'
-                                           selectClassName={'reusable-select'}
-                                           optionList={stateNames.items}
-                                           label={"Weapons in home?"}/>
-                            <DropDownField gridClassName='col-md-12'
-                                           selectClassName={'reusable-select'}
-                                           optionList={stateNames.items}
-                                           label={"Body of Water?"}/>
-                            <DropDownField gridClassName='col-md-12'
-                                           selectClassName={'reusable-select'}
-                                           optionList={stateNames.items}
-                                           label={"Does any person not listed in this document use the residence as their mailing address?"}/>
-                            <InputComponent gridClassName='col-md-12' id='directions'
-                                            label='Please provide directions, including major cross-street information, to your residence.' placeholder='' />
-                            <DropDownField gridClassName='col-md-12'
-                                           selectClassName={'reusable-select'}
-                                           optionList={stateNames.items}
-                                           label={"Language(s) spoken in the home"}/>
-                        </form>
-                    </div>
+                    <DropDownField defaultValue="ddd"
+                                   gridClassName='col-md-6'
+                                   selectClassName={'reusable-select'}
+                                   optionList={yesNo.items}
+                                   label={"Mailing address the same as Physical Address?"}/>
                 </form>
-            </div>
+                    </div>
+                </div>
         )
     }
 }
