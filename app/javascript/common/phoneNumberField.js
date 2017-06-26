@@ -1,6 +1,7 @@
 import React from 'react';
 import {InputComponent} from './inputFields'
 import {DropDownField} from './dropDownField'
+import {CheckboxField} from './checkboxField'
 
 
 export class PhoneNumberField extends React.Component {
@@ -37,7 +38,7 @@ export class PhoneNumberField extends React.Component {
                          selectClassName={'reusable-select'}
                          optionList={phoneType.items}
                          label={"Phone Type"} />
-          <InputComponent gridClassName='col-md-4' id='firstname' type={'checkbox'}
+          <CheckboxField gridClassName='col-md-4' id='firstname' type={'checkbox'}
                           label='Preferred Contact Number' placeholder='Enter Phone Number' />
           {/*<div className="col-md-12">*/}
             {/*<input type="checkbox" />*/}

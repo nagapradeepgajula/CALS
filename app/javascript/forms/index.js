@@ -27,7 +27,7 @@ export default class Forms extends React.Component {
                   Resource Family Approval by a County. Please type or print clearly</p>
               </div>
               <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <button id="saveProgress" onClick={this.submitForm()}>Save Progress</button>
+                <button id="saveProgress" onClick={this.submitForm}>Save Progress</button>
               </div>
             </div>
             <div className="cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12">

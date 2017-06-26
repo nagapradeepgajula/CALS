@@ -20,14 +20,6 @@ export default class Cards extends React.Component {
         races: [],
       },
     }
-    this.setField = this.setField.bind(this)
-  }
-  setField(fieldSeq, value) {
-    const formData = this.state.formData.setIn(fieldSeq, value)
-    this.setState({formData: formData})
-  }
-  submitForm() {
-    console.log("Hello")
   }
   render () {
     const {formData} = this.state
