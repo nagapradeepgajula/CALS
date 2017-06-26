@@ -4,12 +4,12 @@ module Concerns::RFA::ApplicationApiProtocolProvider
 
   class_methods do
     def name_types(auth_header)
-      response = FaradayCals.get("/dictionaries/name-types?token=null", auth_header)
+      response = FaradayCals.get('/dictionaries/name-types?token=null', auth_header)
       JSON.parse(response.body)
     end
 
     def phone_types(auth_header)
-      response = FaradayCals.get("/dictionaries/phone-number-types?token=null", auth_header)
+      response = FaradayCals.get('/dictionaries/phone-number-types?token=null', auth_header)
       JSON.parse(response.body)
     end
 
