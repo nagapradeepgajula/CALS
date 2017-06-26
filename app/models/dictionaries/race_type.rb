@@ -1,4 +1,4 @@
-class RaceType < DictionaryBase
+class Dictionaries::RaceType < DictionaryBase
   include Concerns::BaseCalsApiProtocolProvider
 
   attr_accessor :id, :value
