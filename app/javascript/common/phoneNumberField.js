@@ -43,7 +43,7 @@ export class PhoneNumberField extends React.Component {
         return item.id == event
       })
     }
-    this.state.phoneField[id] = value[0] || event
+    this.state.phoneField[id] = value ? value[0] : event;
     let newPhoneField = this.state.phoneField
     this.setState({
       phoneField: newPhoneField
@@ -62,7 +62,7 @@ export class PhoneNumberField extends React.Component {
             optionList={this.state.phoneTypes.items} value={this.state.phoneField.phone_type}
             label={'Phone Type'} onChange={(event, id) => this.phoneChange(event.target.value, ('phone_type'))} />
           <CheckboxField gridClassName='col-md-4' id='is_preferred' type={'checkbox'}
-            value={this.state.phoneField.number}
+            value={this.state.phoneField.is_preferred}
             label='Preferred Contact Number' placeholder='Enter Phone Number'
             onChange={(event, id) => this.phoneChange(event.target.value, ('is_preferred'))} />
           {/* <div className="col-md-12"> */}
