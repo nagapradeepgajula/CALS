@@ -6,7 +6,6 @@ export default class Employment extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-
       stateTypes: {items: this.props.stateTypes.items},
       salaryTypes: {items: this.props.salaryTypes.items}
 
