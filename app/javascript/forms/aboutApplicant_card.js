@@ -37,9 +37,10 @@ export default class AboutApplicant extends React.Component {
           <form>
             <DropDownField gridClassName='col-md-4'
               selectClassName={'reusable-select'}
-              value={this.state.educationLevel.value}
-              optionList={this.state.educationLevel.items}
-              label={'Highest Level of Education'} />
+              value={this.state.educationLevel.id}
+              optionList={this.state.educationLevels.items}
+              label={'Highest Level of Education'}
+              onChange={(event, id) => this.onChange(event.target.value, (''))}/>
 
             <InputComponent gridClassName='col-md-4' id='dobId' value={this.props.date_of_birth}
               label='Date of Birth' placeholder=''
@@ -47,13 +48,14 @@ export default class AboutApplicant extends React.Component {
 
             <DropDownField gridClassName='col-md-4'
               selectClassName={'reusable-select'}
-              value={this.state.gender.value}
+              value={this.state.gender.id}
               optionList={this.state.genderTypes.items}
-              label={'Gender'} />
+              label={'Gender'}
+              onChange={(event, id) => this.onChange(event.target.value, (''))} />
 
             <DropDownField gridClassName='col-md-4'
               selectClassName={'reusable-select'}
-              value={this.state.ethnicity.value}
+              value={this.state.ethnicity.id}
               optionList={this.state.ethnicityTypes.items}
               label={'Race / Ethnicity'} />
 
@@ -63,7 +65,7 @@ export default class AboutApplicant extends React.Component {
 
             <DropDownField gridClassName='col-md-4'
               selectClassName={'reusable-select'}
-              value={this.state.driverLicState.value}
+              value={this.state.driverLicState.id}
               optionList={this.state.stateTypes.items}
               label={'Driver License State'} />
 

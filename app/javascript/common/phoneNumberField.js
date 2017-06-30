@@ -44,27 +44,15 @@ export class PhoneNumberField extends React.Component {
         return item.id == event
       })
     }
+    if(id == 'is_preferred') {
+      event = (event === 'true');
+      event = !event
+    }
+
     this.state.phoneField[id] = value ? value[0] : event;
     let newPhoneField = this.state.phoneField
     this.setState({
       phoneField: newPhoneField
-    })
-  }
-  handleCheckoboxToggle (event) {
-    let is_preferred = event.target.value
-    if(event.target.id) {
-
-    }
-    if(is_preferred == 'false') {
-      is_preferred = false
-    } else {
-      is_preferred = true
-    }
-    is_preferred = !is_preferred
-    this.setState({
-      phoneField : {
-        is_preferred: is_preferred
-      }
     })
   }
   render () {
@@ -78,13 +66,13 @@ export class PhoneNumberField extends React.Component {
             type={'text'} onChange={(event, number) => this.phoneChange(event.target.value, ('number'))} />
           <DropDownField gridClassName='col-md-4' id='phone_type'
             selectClassName={'reusable-select'}
-            optionList={phoneTypes.items} value={this.state.phoneField.phone_type.value}
+            optionList={phoneTypes.items} value={this.state.phoneField.phone_type.id}
             label={'Phone Type'} onChange={(event, id) => this.phoneChange(event.target.value, ('phone_type'))} />
           <CheckboxField gridClassName='col-md-4' id={'is_preferred'+'-' + this.props.id} type={'checkbox'}
             checked={this.state.phoneField.is_preferred}
             value={this.state.phoneField.is_preferred}
             label='Preferred Contact Number'
-            onChange={(event) => this.handleCheckoboxToggle(event)} />
+            onChange={(event, id) => this.phoneChange(event.target.value, ('is_preferred'))} />
         </form>
       </div>
     )
