@@ -13,7 +13,7 @@ export default class PhoneComponent extends React.Component {
       'insert': true,
       phoneComponentValue: 1
     }
-    this.state.phoneComponents.push(<PhoneNumberField {... this} id={this.state.phoneComponentValue} key={this.state.phoneComponentValue} />)
+    this.state.phoneComponents.push(<PhoneNumberField {... this} phoneChanged={this.phoneFieldChanged} id={this.state.phoneComponentValue} key={this.state.phoneComponentValue} />)
   }
   removeCard (value) {
     var phoneCards = this.state.phoneComponents
@@ -23,8 +23,8 @@ export default class PhoneComponent extends React.Component {
       phoneCards: phoneCards
     })
   }
-  getInitialState () {
-    this.state.phoneComponents = (<PhoneNumberField />)
+  phoneFieldChanged (data) {
+    this
   }
   addCard (event) {
     this.setState({
@@ -32,7 +32,7 @@ export default class PhoneComponent extends React.Component {
     })
     if (this.state.insert) {
       this.state.phoneComponentValue += 1
-      this.state.phoneComponents.push(<PhoneNumberField {... this} id={this.state.phoneComponentValue} key={this.state.phoneComponentValue} />)
+      this.state.phoneComponents.push(<PhoneNumberField {... this} phoneChanged={this.phoneFieldChanged} id={this.state.phoneComponentValue} key={this.state.phoneComponentValue} />)
     }
   }
   render () {

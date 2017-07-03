@@ -10,6 +10,7 @@ export class PhoneNumberField extends React.Component {
     this.state = {
       isdiabled : false,
       phoneField: {
+        ID : '',
         number: '',
         phone_type: {
           id: '',
@@ -17,6 +18,7 @@ export class PhoneNumberField extends React.Component {
         },
         is_preferred: false
       },
+      phoneList : [],
       phoneTypes: {
         'items': this.props.props.phoneTypes.items
       }
@@ -26,6 +28,7 @@ export class PhoneNumberField extends React.Component {
     if (id == 1) {
       this.setState({
         phoneField: {
+          ID: '',
           number: '',
           phone_type: {
             id: '',
@@ -45,13 +48,20 @@ export class PhoneNumberField extends React.Component {
       })
     }
     if(id == 'is_preferred') {
+      this.state.phoneField.ID = event.target.id
+      event = event.target.value;
       event = (event === 'true');
       event = !event
     }
-
     this.state.phoneField[id] = value ? value[0] : event;
-    let newPhoneField = this.state.phoneField
+    this.props.phoneChanged(this.state.phoneField);
+    var newPhoneField = this.state.phoneField;
+    var newPhoneList = this.state.phoneList;
+    if(newPhoneField.is_preferred && newPhoneField.phone_type.value.length && (newPhoneField.number.length > 1)){
+      newPhoneList.push(this.state.phoneField);
+    }
     this.setState({
+      phoneList : newPhoneList,
       phoneField: newPhoneField
     })
   }
@@ -72,7 +82,7 @@ export class PhoneNumberField extends React.Component {
             checked={this.state.phoneField.is_preferred}
             value={this.state.phoneField.is_preferred}
             label='Preferred Contact Number'
-            onChange={(event, id) => this.phoneChange(event.target.value, ('is_preferred'))} />
+            onChange={(event, id) => this.phoneChange(event, ('is_preferred'))} />
         </form>
       </div>
     )
