@@ -14,7 +14,7 @@ end
 private
 def localhost_has_identify?(request)
   #byebug
-  if request.uri.starts_with?(CALS_API_BASE_URL)
+  if request.uri.starts_with?(CALS_API_URL)
     false
   else
     true
