@@ -8,4 +8,8 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     Dictionaries::EthnicityType.all(auth_header)
   end
 
+  def address_types
+    Dictionaries::AddressType.all(auth_header)
+  end
+
 end

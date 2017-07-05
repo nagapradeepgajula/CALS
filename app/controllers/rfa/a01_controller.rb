@@ -24,6 +24,7 @@ class Rfa::A01Controller < CalsBaseController
     @residence_types =  rfa_residence_helper.residence_types
 
     @ethnicity_types = dictionaries_helper.ethnicity_types
+    @address_types = dictionaries_helper.address_types
   end
 
   def update
