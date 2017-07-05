@@ -1,14 +1,14 @@
 import React from 'react'
 import NameCard from './name_card'
-import PhoneComponent from './phoneNumbers_card'
+import PhoneComponent from './phoneNumbersCard'
 import AboutApplicant from './aboutApplicant_card'
 import Employment from './employment_card'
 
 export default class Cards extends React.Component {
   constructor (props) {
-    super(props);
+    super(props)
     this.state = {
-      isFocused : {}
+      isFocused: {}
     }
   }
   toggleOnFocus (name, event) {

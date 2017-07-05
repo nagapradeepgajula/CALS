@@ -1,7 +1,5 @@
 import React from 'react'
 import {PhoneNumberField} from '../common/phoneNumberFields'
-import {InputComponent} from '../common/inputFields'
-import {DropDownField} from '../common/dropDownField'
 
 export default class PhoneComponent extends React.Component {
   constructor (props) {
@@ -12,7 +10,7 @@ export default class PhoneComponent extends React.Component {
     this.state = {
       phoneComponentValue: 0,
       phoneFieldList: [{
-        ID : '',
+        ID: '',
         number: '',
         phone_type: {
           id: '',
@@ -25,15 +23,22 @@ export default class PhoneComponent extends React.Component {
     }
   }
   removeCard (value) {
-    //this.state.phoneComponentValue -= 1 ;
-    var totalCards = [];
-    totalCards = totalCards.concat(this.state.numPhoneCards);
-    if(this.state.phoneComponentValue > 0) {
-      totalCards.pop();
+    let totalCards = []
+    totalCards = totalCards.concat(this.state.numPhoneCards)
+    let newPhoneList = []
+    newPhoneList = newPhoneList.concat(this.state.phoneFieldList)
+    if (this.state.phoneComponentValue > 0) {
+      for (var i = 0; i < this.state.numPhoneCards.length; i++) {
+        if (newPhoneList[i].ID === value) {
+          newPhoneList.splice(i, 1)
+          totalCards.splice(i, 1)
+        }
+      }
       this.state.phoneComponentValue -= 1
     }
     this.setState({
-      numPhoneCards : totalCards
+      numPhoneCards: totalCards,
+      phoneFieldList: newPhoneList
     })
   }
   addCard (event) {
@@ -41,13 +46,13 @@ export default class PhoneComponent extends React.Component {
       'insert': true
     })
     if (this.state.insert) {
-      this.state.phoneComponentValue += 1;
-      let totalCards = [];
-      totalCards = totalCards.concat(this.state.numPhoneCards);
-      totalCards.push(this.state.phoneComponentValue);
-      let phoneList = this.state.phoneFieldList;
+      this.state.phoneComponentValue += 1
+      let totalCards = []
+      totalCards = totalCards.concat(this.state.numPhoneCards)
+      totalCards.push(this.state.phoneComponentValue)
+      let phoneList = this.state.phoneFieldList
       phoneList.push({
-        ID : '',
+        ID: '',
         number: '',
         phone_type: {
           id: '',
@@ -56,18 +61,17 @@ export default class PhoneComponent extends React.Component {
         is_preferred: false
       })
       this.setState({
-        numPhoneCards : totalCards,
-        phoneFieldList : phoneList
+        numPhoneCards: totalCards,
+        phoneFieldList: phoneList
       })
     }
-
   }
   checkPreferred (data) {
-    var changedPhoneList = [];
+    var changedPhoneList = []
     changedPhoneList = changedPhoneList.concat(this.state.phoneFieldList);
-    for (var i = 0; i < changedPhoneList.length; i++ ) {
-      if(data.phoneField.ID != changedPhoneList[i].ID) {
-        changedPhoneList[i].is_preferred = false;
+    for (var i = 0; i < changedPhoneList.length; i++) {
+      if (data.phoneField.ID !== changedPhoneList[i].ID) {
+        changedPhoneList[i].is_preferred = false
       }
     }
   }

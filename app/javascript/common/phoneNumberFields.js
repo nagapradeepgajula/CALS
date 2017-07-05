@@ -8,13 +8,14 @@ export class PhoneNumberField extends React.Component {
     super(props)
     this.clickClose = this.clickClose.bind(this)
     this.state = {
-      isdiabled : false,
+      isdiabled: false,
       phoneField: this.props.state.phoneFieldList[this.props.state.phoneComponentValue],
-      phoneList : [],
+      phoneList: [],
       phoneTypes: {
         'items': this.props.props.phoneTypes.items
       }
     }
+    this.state.phoneField.ID = this.props.id;
   }
   clickClose (id) {
     if (id == 0) {
@@ -34,23 +35,23 @@ export class PhoneNumberField extends React.Component {
     }
   }
   phoneChange (event, id) {
-    let value;
+    let value
+    this.state.phoneField.ID = this.props.id
     if (event && id == 'phone_type') {
       value = this.state.phoneTypes.items.filter(function (item) {
         return item.id == event
       })
     }
-    if(id == 'is_preferred') {
-      this.state.phoneField.ID = event.target.id
-      event = event.target.value;
-      event = (event === 'true');
-      event = !event;
-      this.state.phoneField[id] = event;
-      this.props.checkPreferred(this.state);
+    if (id === 'is_preferred') {
+      event = event.target.value
+      event = (event === 'true')
+      event = !event
+      this.state.phoneField[id] = event
+      this.props.checkPreferred(this.state)
     } else {
-      this.state.phoneField[id] = value ? value[0] : event;
+      this.state.phoneField[id] = value ? value[0] : event
     }
-    let newPhoneField = this.state.phoneField;
+    let newPhoneField = this.state.phoneField
     this.setState({
       phoneField: newPhoneField
     })
