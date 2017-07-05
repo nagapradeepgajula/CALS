@@ -25,7 +25,7 @@ export class PhoneNumberField extends React.Component {
     }
   }
   clickClose (id) {
-    if (id == 1) {
+    if (id == 0) {
       this.setState({
         phoneField: {
           ID: '',
@@ -54,7 +54,7 @@ export class PhoneNumberField extends React.Component {
       event = !event
     }
     this.state.phoneField[id] = value ? value[0] : event;
-    this.props.phoneChanged(this.state.phoneField);
+    //this.props.phoneChanged(this.state.phoneField);
     var newPhoneField = this.state.phoneField;
     var newPhoneList = this.state.phoneList;
     if(newPhoneField.is_preferred && newPhoneField.phone_type.value.length && (newPhoneField.number.length > 1)){
