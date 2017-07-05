@@ -1,6 +1,6 @@
 import React from 'react'
 import NameCard from './name_card'
-import PhoneComponent from './phoneNumber_card'
+import PhoneComponent from './phoneNumbers_card'
 import AboutApplicant from './aboutApplicant_card'
 import Employment from './employment_card'
 

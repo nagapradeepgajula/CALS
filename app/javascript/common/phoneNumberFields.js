@@ -9,15 +9,7 @@ export class PhoneNumberField extends React.Component {
     this.clickClose = this.clickClose.bind(this)
     this.state = {
       isdiabled : false,
-      phoneField: {
-        ID : '',
-        number: '',
-        phone_type: {
-          id: '',
-          value: ''
-        },
-        is_preferred: false
-      },
+      phoneField: this.props.state.phoneFieldList[this.props.state.phoneComponentValue],
       phoneList : [],
       phoneTypes: {
         'items': this.props.props.phoneTypes.items
@@ -42,8 +34,9 @@ export class PhoneNumberField extends React.Component {
     }
   }
   phoneChange (event, id) {
+    let value;
     if (event && id == 'phone_type') {
-      var value = this.state.phoneTypes.items.filter(function (item) {
+      value = this.state.phoneTypes.items.filter(function (item) {
         return item.id == event
       })
     }
@@ -51,17 +44,14 @@ export class PhoneNumberField extends React.Component {
       this.state.phoneField.ID = event.target.id
       event = event.target.value;
       event = (event === 'true');
-      event = !event
+      event = !event;
+      this.state.phoneField[id] = event;
+      this.props.checkPreferred(this.state);
+    } else {
+      this.state.phoneField[id] = value ? value[0] : event;
     }
-    this.state.phoneField[id] = value ? value[0] : event;
-    //this.props.phoneChanged(this.state.phoneField);
-    var newPhoneField = this.state.phoneField;
-    var newPhoneList = this.state.phoneList;
-    if(newPhoneField.is_preferred && newPhoneField.phone_type.value.length && (newPhoneField.number.length > 1)){
-      newPhoneList.push(this.state.phoneField);
-    }
+    let newPhoneField = this.state.phoneField;
     this.setState({
-      phoneList : newPhoneList,
       phoneField: newPhoneField
     })
   }
@@ -78,7 +68,7 @@ export class PhoneNumberField extends React.Component {
             selectClassName={'reusable-select'}
             optionList={phoneTypes.items} value={this.state.phoneField.phone_type.id}
             label={'Phone Type'} onChange={(event, id) => this.phoneChange(event.target.value, ('phone_type'))} />
-          <CheckboxField gridClassName='col-md-4' id={'is_preferred'+'-' + this.props.id} type={'checkbox'}
+          <CheckboxField gridClassName='col-md-4' id={this.props.id} type={'checkbox'}
             checked={this.state.phoneField.is_preferred}
             value={this.state.phoneField.is_preferred}
             label='Preferred Contact Number'
