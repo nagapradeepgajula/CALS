@@ -12,4 +12,7 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     Dictionaries::AddressType.all(auth_header)
   end
 
+  def residence_ownership_types
+    Dictionaries::ResidenceOwnershipType.all(auth_header)
+  end
 end
