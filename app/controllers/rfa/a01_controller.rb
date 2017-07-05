@@ -20,7 +20,8 @@ class Rfa::A01Controller < CalsBaseController
     @language_types =  rfa_applicant_helper.language_types
     @state_types = rfa_applicant_helper.state_types
     @salary_types = rfa_applicant_helper.salary_types
-    @residence_types =  rfa_applicant_helper.residence_types
+
+    @residence_types =  rfa_residence_helper.residence_types
 
     @ethnicity_types = dictionaries_helper.ethnicity_types
   end
@@ -37,6 +38,10 @@ class Rfa::A01Controller < CalsBaseController
 
   def rfa_applicant_helper
     Helpers::RFA::Applicant.new(auth_header: session['token'])
+  end
+
+  def rfa_residence_helper
+    Helpers::RFA::ApplicationResidence.new(auth_header: session['token'])
   end
 
   def dictionaries_helper
