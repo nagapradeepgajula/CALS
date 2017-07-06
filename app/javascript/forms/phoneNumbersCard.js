@@ -60,7 +60,7 @@ export default class PhoneComponent extends React.Component {
   }
   checkPreferred (data) {
     var changedPhoneList = []
-    changedPhoneList = changedPhoneList.concat(this.state.phoneFieldList);
+    changedPhoneList = changedPhoneList.concat(this.state.phoneFieldList)
     for (var i = 0; i < changedPhoneList.length; i++) {
       if (data.phoneField.ID !== changedPhoneList[i].ID) {
         changedPhoneList[i].is_preferred = false

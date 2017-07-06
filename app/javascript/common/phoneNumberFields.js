@@ -15,10 +15,10 @@ export class PhoneNumberField extends React.Component {
         'items': this.props.props.phoneTypes.items
       }
     }
-    this.state.phoneField.ID = this.props.id;
+    this.state.phoneField.ID = this.props.id
   }
   clickClose (id) {
-    if (id == 0) {
+    if (id === 0) {
       this.setState({
         phoneField: {
           ID: '',
@@ -57,7 +57,7 @@ export class PhoneNumberField extends React.Component {
     })
   }
   render () {
-    let phoneTypes = this.state.phoneTypes;
+    let phoneTypes = this.state.phoneTypes
     return (
       <div className='row list-item'>
         <span onClick={() => this.clickClose(this.props.id)} className='pull-right glyphicon glyphicon-remove' />
