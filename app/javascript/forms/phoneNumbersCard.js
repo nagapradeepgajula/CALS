@@ -10,7 +10,7 @@ export default class PhoneComponent extends React.Component {
     this.state = {
       phoneComponentValue: 0,
       phoneFieldList: [{
-        ID: '',
+        ID: 0,
         number: '',
         phone_type: {
           id: '',
@@ -18,26 +18,22 @@ export default class PhoneComponent extends React.Component {
         },
         is_preferred: false
       }],
-      numPhoneCards: [0],
       'insert': true
     }
   }
   removeCard (value) {
-    let totalCards = []
-    totalCards = totalCards.concat(this.state.numPhoneCards)
     let newPhoneList = []
     newPhoneList = newPhoneList.concat(this.state.phoneFieldList)
     if (this.state.phoneComponentValue > 0) {
-      for (var i = 0; i < this.state.numPhoneCards.length; i++) {
+      for (var i = 0; i < this.state.phoneFieldList.length; i++) {
         if (newPhoneList[i].ID === value) {
           newPhoneList.splice(i, 1)
-          totalCards.splice(i, 1)
+          break
         }
       }
       this.state.phoneComponentValue -= 1
     }
     this.setState({
-      numPhoneCards: totalCards,
       phoneFieldList: newPhoneList
     })
   }
@@ -47,12 +43,9 @@ export default class PhoneComponent extends React.Component {
     })
     if (this.state.insert) {
       this.state.phoneComponentValue += 1
-      let totalCards = []
-      totalCards = totalCards.concat(this.state.numPhoneCards)
-      totalCards.push(this.state.phoneComponentValue)
       let phoneList = this.state.phoneFieldList
       phoneList.push({
-        ID: '',
+        ID: this.state.phoneComponentValue,
         number: '',
         phone_type: {
           id: '',
@@ -61,7 +54,6 @@ export default class PhoneComponent extends React.Component {
         is_preferred: false
       })
       this.setState({
-        numPhoneCards: totalCards,
         phoneFieldList: phoneList
       })
     }
@@ -76,13 +68,12 @@ export default class PhoneComponent extends React.Component {
     }
   }
   render () {
-    var noOFPhoneCards = this.state.numPhoneCards;
-    let phoneListToChild = this.state.phoneFieldList;
+    let phoneListToChild = this.state.phoneFieldList
     return (
       <div className='card-body'>
         {
-          noOFPhoneCards.map((i) => {
-            return <PhoneNumberField key={i} id={i} {...this}/>
+          phoneListToChild.map((i) => {
+            return <PhoneNumberField key={i.ID} id={i.ID} {...this}/>
           })
         }
         <div className='text-center'>
