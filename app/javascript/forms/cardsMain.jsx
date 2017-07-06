@@ -1,7 +1,7 @@
 import React from 'react'
 import NameCard from './name_card'
 import PhoneComponent from './phoneNumbersCard'
-import AboutApplicant from './aboutApplicant_card'
+import AboutApplicant from './aboutApplicantCard'
 import Employment from './employment_card'
 
 export default class Cards extends React.Component {
