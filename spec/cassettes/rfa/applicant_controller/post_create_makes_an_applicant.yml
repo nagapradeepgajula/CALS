@@ -15,19 +15,19 @@ http_interactions:
       message: 
     headers:
       date:
-      - Wed, 05 Jul 2017 22:06:36 GMT
+      - Thu, 06 Jul 2017 15:21:40 GMT
       content-type:
       - application/json
       content-length:
-      - '56'
+      - '55'
     body:
       encoding: UTF-8
       string: |-
         {
-          "id" : 10,
+          "id" : 8,
           "other_names" : [ ],
           "phones" : [ ]
         }
     http_version: 
-  recorded_at: Wed, 05 Jul 2017 22:06:36 GMT
+  recorded_at: Thu, 06 Jul 2017 15:21:37 GMT
 recorded_with: VCR 3.0.3

@@ -10,10 +10,7 @@ describe Rfa::ResidenceController do
 
   describe 'post create' do
     it 'makes an a residence' do
-      rfa_application =   FactoryGirl.build(:application, id: 1)
-
-      post :create,  params: {a01_id: rfa_application.id}
-      expect(response.status).to eq(204)
+  
     end
   end
 

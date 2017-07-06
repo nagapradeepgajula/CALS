@@ -15,7 +15,7 @@ http_interactions:
       message: 
     headers:
       date:
-      - Wed, 05 Jul 2017 22:06:38 GMT
+      - Thu, 06 Jul 2017 15:21:50 GMT
       content-type:
       - application/json
       content-length:
@@ -24,10 +24,10 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "id" : 43,
+          "id" : 47,
           "is_initial_application" : false,
           "is_other_type" : false
         }
     http_version: 
-  recorded_at: Wed, 05 Jul 2017 22:06:38 GMT
+  recorded_at: Thu, 06 Jul 2017 15:21:47 GMT
 recorded_with: VCR 3.0.3

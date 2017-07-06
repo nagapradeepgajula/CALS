@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :a01 do
 
       resources :applicant, only: [:index, :create, :edit]
-      resources :residence, only: [:show, :create, :edit]
+      resource :residence, only: [:show, :create, :edit]
 
     end
 
