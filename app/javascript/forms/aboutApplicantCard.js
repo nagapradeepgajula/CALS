@@ -11,21 +11,21 @@ export default class AboutApplicant extends React.Component {
       ethnicityTypes: {items: this.props.ethnicityTypes.items},
       languageTypes: {items: this.props.languageTypes.items},
       stateTypes: {items: this.props.stateTypes.items},
-      educationLevel : {
-        id : '',
-        value : ''
+      educationLevel: {
+        id: '',
+        value: ''
       },
-      gender : {
-        id : '',
-        value : ''
+      gender: {
+        id: '',
+        value: ''
       },
-      ethnicity : {
-        id : '',
-        value : ''
+      ethnicity: {
+        id: '',
+        value: ''
       },
-      driverLicState : {
-        id : '',
-        value : ''
+      driverLicState: {
+        id: '',
+        value: ''
       }
     }
   }

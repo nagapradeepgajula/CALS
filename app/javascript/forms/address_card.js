@@ -8,13 +8,13 @@ export default class AddressCard extends React.Component {
     super(props)
     this.state = {
       stateTypes: {items: this.props.stateTypes.items},
-      yesNo : {
-        id : '',
-        value : ''
+      yesNo: {
+        id: '',
+        value: ''
       },
-      stateDropDown : {
-        id : '',
-        value : ''
+      stateDropDown: {
+        id: '',
+        value: ''
       }
     }
     this.onChange = this.onChange.bind(this)
